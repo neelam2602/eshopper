@@ -1,0 +1,109 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "cat_id": 1,
+      "cat_name": "Mens1 Wear"
+    },
+    {
+      "id": 2,
+      "cat_id": 2,
+      "cat_name": "Womens Wear"
+    },
+    {
+      "id": 3,
+      "cat_id": 3,
+      "cat_name": "Kids Wear"
+    },
+    {
+      "cat_name": "sss",
+      "id": 4
+    }
+  ],
+  "brand": [
+    {
+      "id": 1,
+      "br_id": 1,
+      "br_name": "Adidas"
+    },
+    {
+      "id": 2,
+      "br_id": 2,
+      "br_name": "Killer Jeans"
+    },
+    {
+      "id": 3,
+      "br_id": 3,
+      "br_name": "Puma"
+    },
+    {
+      "br_name": "fastrack",
+      "id": 4
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "pro_id": 1,
+      "pro_name": "Mens Formal",
+      "proca_id": 1,
+      "pro_price": 2000,
+      "pro_discount": 20,
+      "pro_brid": 1,
+      "pro_path": "product1.jpg"
+    },
+    {
+      "id": 2,
+      "pro_id": 2,
+      "pro_name": "Mens Office Wear",
+      "proca_id": 1,
+      "pro_price": 2500,
+      "pro_discount": 40,
+      "pro_brid": 2,
+      "pro_path": "product2.jpg"
+    },
+    {
+      "id": 3,
+      "pro_id": 3,
+      "pro_name": "Womens Casual Wear  ",
+      "proca_id": 2,
+      "pro_price": 3000,
+      "pro_discount": 50,
+      "pro_brid": 3,
+      "pro_path": "product6.jpg"
+    },
+    {
+      "id": 4,
+      "pro_id": 4,
+      "pro_name": "Kids Party Wear ",
+      "proca_id": 3,
+      "pro_price": 2550,
+      "pro_discount": 50,
+      "pro_brid": 2,
+      "pro_path": "product11.jpg"
+    }
+  ],
+  "register": [
+    {
+      "id": 1,
+      "username": 1,
+      "mob_num": "Mens1 Wear",
+      "emailid": "",
+      "pass": ""
+    },
+    {
+      "username": "neelam",
+      "mob_num": "88888",
+      "emailid": "neelam@gmail.com",
+      "pass": "12345",
+      "id": 2
+    },
+    {
+      "username": "neelam",
+      "mob_num": "88888",
+      "emailid": "neelam1@gmail.com",
+      "pass": "12345",
+      "id": 3
+    }
+  ]
+}
