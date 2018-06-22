@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudService} from '../crud.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-featured',
@@ -11,7 +12,7 @@ export class FeaturedComponent implements OnInit {
   i:number;
   public arr=[];
   public typeFilter:string;
-  constructor(private crud:CrudService) { }
+  constructor(private crud:CrudService,private cookieService:CookieService) { }
 
   ngOnInit() {
     this.crud.getdata("product").subscribe(
@@ -44,6 +45,28 @@ export class FeaturedComponent implements OnInit {
       }
     )
   	
+  }
+  add_to_cart = function(id,e){
+    e.preventDefault();
+    // console.log(this.cookieService)
+    if(this.cookieService.get("product")){
+      var cookieData = this.cookieService.get("product")
+      var check = cookieData.split(",");
+      // console.log(check)
+      if(check.indexOf(id.toString()) == -1){
+        var newData = cookieData+","+id;
+        alert(newData);
+        this.cookieService.set("product",newData);
+        alert("New Data")
+      }
+      else{
+        alert("product exists")
+      }
+    }
+    else{
+      this.cookieService.set("product",id)
+      alert("product added")
+    }
   }
 
 }

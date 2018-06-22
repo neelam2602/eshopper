@@ -5,6 +5,7 @@ import {CrudService} from './crud.service';
 import { RouterModule, Routes } from '@angular/router';
 import {
 FormsModule} from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -53,7 +54,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
 
   ],
-  providers: [CrudService],
+  providers: [CrudService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
