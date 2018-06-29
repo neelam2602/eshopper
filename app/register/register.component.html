@@ -3,19 +3,29 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
-						<form  (ngSubmit)="register(formData.value)" #formData="ngForm">
-							<input placeholder="Name" type="text" name="username" ngModel>
-							<input placeholder="Mobile" type="text" name="mob_num" ngModel>
-							<input placeholder="EmailId" type="text" name="emailid" ngModel>
-							<input placeholder="Password" type="text" name="pass" ngModel>
-							
-							
-							
-							<button type="submit" class="btn btn-default" >Register</button>
+						<h2>Login to your account</h2>
+						<form [formGroup]="user" #formData="ngForm" (ngSubmit)="onSubmit(formData.value)">
+							<input type="text" placeholder="Name" formControlName="name" />
+
+			<div *ngIf="!user.controls['name'].valid && user.controls['name'].touched">Invalid name</div>	
+
+						<input type="text" placeholder="Mobile" formControlName="mobile" />
+
+			<div *ngIf="!user.controls['mobile'].valid && user.controls['mobile'].touched">Invalid mobile</div>
+
+					<input type="text" placeholder="Emailid" formControlName="emailid" />
+
+			<div *ngIf="!user.controls['emailid'].valid && user.controls['emailid'].touched">Invalid emailid</div>
+
+					<input type="text" placeholder="Password" formControlName="pass" />
+
+			<div *ngIf="!user.controls['pass'].valid && user.controls['pass'].touched">Invalid password</div>
+
+							<button [disabled]="!user.valid" type="submit">Register</button>
 						</form>
 					</div><!--/login form-->
 				</div>
 				
 			</div>
 		</div>
-	</section>
+	</section><!--/form-->

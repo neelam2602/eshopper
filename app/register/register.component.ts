@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {CrudService} from '../crud.service';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,18 +9,22 @@ import {CrudService} from '../crud.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private crud:CrudService) { }
+  user:FormGroup;
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
+
+    this.user = this.fb.group({
+
+  name: ['', [Validators.required, Validators.minLength(2)]],      
+  mobile: ['', [Validators.required, Validators.minLength(2)]],
+  emailid: ['', [Validators.required, Validators.email, Validators.minLength(2)]],
+  pass: ['', [Validators.required, Validators.minLength(2)]],
+    })
   }
-  register = function(rec){
-  	console.log(rec)
-  	// return false;
-  	this.crud.postdata("register",rec).subscribe(
-      (result)=>{
-        alert("added")
-      }
-      
-    );
+
+  onSubmit(data){
+    console.log(data);
   }
+
 }

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
 FormsModule} from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
 
